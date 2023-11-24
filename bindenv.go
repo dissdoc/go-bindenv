@@ -1,9 +1,11 @@
 package gobindenv
 
-import "fmt"
+import (
+	"github.com/dissdoc/go-bindenv/internal"
+)
 
 var Version string = "0.1.0"
 
-func BindEnv(message string) {
-	fmt.Println("[LOG]" + message)
+func BindEnv(cfg interface{}) {
+	internal.ScanEnv(cfg)
 }
